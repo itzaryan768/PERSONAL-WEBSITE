@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Service</title>
+    <link rel="icon" href="https://i.imgur.com/AFKTGv1.jpeg" type="image/jpg">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            max-width: 800px;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .logo {
+            width: 50px;
+            height: auto;
+        }
+        h1 {
+            color: #333;
+            font-size: 2rem;
+            margin: 0;
+        }
+        .api-menu {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+        }
+        .api-menu-content {
+            display: none;
+            position: absolute;
+            background-color: #fff;
+            min-width: 200px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            z-index: 1;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .api-menu-content a {
+            color: #333;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.3s ease;
+        }
+        .api-menu-content a:hover {
+            background-color: #f9f9f9;
+        }
+        .api-menu:hover .api-menu-content {
+            display: block;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        p {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #666;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 15px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        code {
+            background-color: #f0f0f0;
+            padding: 3px 6px;
+            border-radius: 3px;
+            font-family: Consolas, monospace;
+        }
+        .info-text {
+            font-size: 0.9rem;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <div class="logo">
+            <img src="https://i.imgur.com/AFKTGv1.jpeg" alt="Website Logo" class="logo">
+        </div>
+        <h1>API Service</h1>
+        <div class="api-menu">
+            <span>&#8942;</span>
+            <div class="api-menu-content">
+                <a href="#copilot">Copilot</a>
+                <a href="#sdxl">SDXL</a>
+                <a href="#wallpaper">Wallpaper</a>
+                <a href="#promptgen">Prompt Generator</a>
+                <a href="#songinfo">Song Info v2</a>
+                <a href="#videoinfo">Video Info</a>
+                <a href="#movieinfo">Movie Info</a>
+                <a href="#dalle">DALL-E</a>
+                <a href="#llama">Llama</a>
+                <a href="#mixtral">Mixtral</a>
+                <a href="#pinterest">Pinterest</a>
+                <a href="#movieinfov2">Movie Info v2</a>
+                <a href="#gemini">Gemini</a>
+                <a href="#imagegen">Image Generator</a>
+                <a href="#fbstalk">Facebook Stalker</a>
+                <a href="#pexels">Pexels</a>
+                <a href="#4kupscaler">4K Upscaler</a>
+                <a href="#sim">SIM</a>
+                <a href="#lyrics">Lyrics</a>
+            </div>
+        </div>
+    </header>
+    <section>
+        <h2>Available Endpoints</h2>
+        <p class="info-text">Use the following endpoints to interact with the API service:</p>
+        <ul>
+            <li id="copilot">
+                <strong>Copilot:</strong> <code>/api/copilot?prompt=your_prompt</code>
+            </li>
+            <li id="sdxl">
+                <strong>SDXL:</strong> <code>/api/sdxl?prompt=your_prompt&model=your_model</code>
+            </li>
+            <li id="wallpaper">
+                <strong>Wallpaper:</strong> <code>/api/wallpaper?query=your_query&number=number_of_images</code>
+            </li>
+            <li id="promptgen">
+                <strong>Prompt Generator:</strong> <code>/api/promptgen?prompt=your_prompt</code>
+            </li>
+            <li id="songinfo">
+                <strong>Song Info v2:</strong> <code>/api/songinfo/v2?id=your_song_id</code>
+            </li>
+            <li id="videoinfo">
+                <strong>Video Info:</strong> <code>/api/videoinfo?query=your_query</code>
+            </li>
+            <li id="movieinfo">
+                <strong>Movie Info:</strong> <code>/api/movieinfo?title=your_movie_title</code>
+            </li>
+            <li id="dalle">
+                <strong>DALL-E:</strong> <code>/api/dalle?prompt=your_prompt&amount=number_of_images</code>
+            </li>
+            <li id="llama">
+                <strong>Llama:</strong> <code>/api/llama?prompt=your_prompt</code>
+            </li>
+            <li id="mixtral">
+                <strong>Mixtral:</strong> <code>/api/mixtral?prompt=your_prompt</code>
+            </li>
+            <li id="pinterest">
+                <strong>Pinterest:</strong> <code>/api/pinterest?query=your_query&limits=number_of_results</code>
+            </li>
+            <li id="movieinfov2">
+                <strong>Movie Info v2:</strong> <code>/api/movieinfo/v2?id=your_movie_id</code>
+            </li>
+            <li id="gemini">
+                <strong>Gemini:</strong> <code>/api/gemini?prompt=your_prompt</code>
+            </li>
+            <li id="imagegen">
+                <strong>Image Generator:</strong> <code>/api/gen?q=your_query</code>
+            </li>
+            <li id="fbstalk">
+                <strong>Facebook Stalker:</strong> <code>/api/fbstalk?uid=your_user_id&token=your_access_token</code>
+            </li>
+            <li id="pexels">
+                <strong>Pexels:</strong> <code>/api/pexels?query=your_query&number=number_of_images</code>
+            </li>
+            <li id="4kupscaler">
+                <strong>4K Upscaler:</strong> <code>/api/4k?url=your_image_url</code>
+            </li>
+            <li id="sim">
+                <strong>SIM:</strong> <code>/api/sim?chat=your_chat&lang=your_language</code>
+            </li>
+            <li id="lyrics">
+                <strong>Lyrics:</strong> <code>/api/lyrics?songName=your_song_name</code>
+            </li>
+        </ul>
+    </section>
+    <footer class="footer">
+        <p>&copy; 2024 API Service. All rights reserved.</p>
+    </footer>
+</div>
+</body>
+</html>
